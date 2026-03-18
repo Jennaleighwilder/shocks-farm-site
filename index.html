@@ -126,15 +126,19 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 .story-mini-label{font-family:'Rye',serif;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(232,185,15,.72);display:block;margin:3.2rem 0 1rem;}
 .family-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.2rem;}
 .family-shot{position:relative;overflow:hidden;min-height:220px;border:1.5px solid rgba(232,185,15,.22);background:rgba(0,0,0,.24);box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .25s,border-color .25s,box-shadow .25s;}
-.family-shot.hero{grid-column:span 2;grid-row:span 2;min-height:460px;background:rgba(13,8,24,.68);}
 .family-shot img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) brightness(.9);transition:transform .7s ease,filter .4s ease;}
-.family-shot.hero img{object-fit:contain;object-position:center center;background:rgba(13,8,24,.82);}
 .family-shot::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,8,24,.92) 0%,rgba(13,8,24,.16) 52%,transparent 80%);}
 .family-shot:hover{transform:translateY(-5px);border-color:rgba(232,185,15,.5);box-shadow:0 18px 38px rgba(0,0,0,.4);}
 .family-shot:hover img{transform:scale(1.05);filter:saturate(1.15) brightness(.98);}
 .family-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1rem 1.05rem;}
 .family-cap strong{display:block;font-family:'Uncial Antiqua',serif;font-size:1rem;color:var(--sun);margin-bottom:.18rem;}
 .family-cap span{display:block;font-family:'Libre Baskerville',serif;font-size:.78rem;line-height:1.55;color:rgba(244,237,216,.82);}
+.family-portrait{margin-top:1.2rem;padding:1rem;background:rgba(201,148,10,.06);border:1.5px solid rgba(232,185,15,.26);box-shadow:0 16px 40px rgba(0,0,0,.24);}
+.family-portrait-frame{background:rgba(13,8,24,.8);border:1px solid rgba(232,185,15,.18);padding:1rem;}
+.family-portrait-frame img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;margin:0 auto;}
+.family-portrait-copy{text-align:center;padding:.95rem .5rem .2rem;}
+.family-portrait-copy strong{display:block;font-family:'Uncial Antiqua',serif;font-size:1.08rem;color:var(--sun);margin-bottom:.25rem;}
+.family-portrait-copy span{display:block;font-family:'Libre Baskerville',serif;font-size:.84rem;line-height:1.65;color:rgba(244,237,216,.82);max-width:58ch;margin:0 auto;}
 .lori-feature{margin-top:2rem;display:grid;grid-template-columns:320px 1fr;gap:2rem;align-items:stretch;padding:1.5rem;background:rgba(201,148,10,.08);border:1.5px solid rgba(232,185,15,.28);position:relative;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.24);}
 .lori-feature::before,.lori-feature::after{content:'';position:absolute;width:54px;height:54px;}
 .lori-feature::before{top:-2px;left:-2px;border-top:2px solid rgba(232,185,15,.72);border-left:2px solid rgba(232,185,15,.72);}
@@ -396,7 +400,6 @@ footer a{color:var(--gold);text-decoration:none;}
   .fg{grid-template-columns:1fr;}
   .contact-cards{grid-template-columns:1fr;}
   .family-gallery{grid-template-columns:1fr 1fr;}
-  .family-shot.hero{grid-column:span 2;grid-row:span 1;min-height:320px;}
   .lori-feature{grid-template-columns:1fr;}
   .lori-photo{min-height:320px;}
 }
@@ -465,13 +468,6 @@ footer a{color:var(--gold);text-decoration:none;}
     </div>
     <span class="story-mini-label reveal">Family Life on the Land</span>
     <div class="family-gallery">
-      <div class="family-shot hero reveal">
-        <img src="images/family-christmas.jpg" alt="The whole family together at Christmas, including Riley's girlfriend Abby">
-        <div class="family-cap">
-          <strong>Christmas Together</strong>
-          <span>The whole family gathered close, including Riley's girlfriend Abby.</span>
-        </div>
-      </div>
       <div class="family-shot reveal">
         <img src="images/rachelle-tennis.jpg" alt="Rachelle on the tennis court">
         <div class="family-cap">
@@ -513,6 +509,15 @@ footer a{color:var(--gold);text-decoration:none;}
           <strong>Andrew &amp; Willow</strong>
           <span>Christmas joy, inside jokes, and the tenderness that fills this family.</span>
         </div>
+      </div>
+    </div>
+    <div class="family-portrait reveal">
+      <div class="family-portrait-frame">
+        <img src="images/family-christmas.jpg" alt="The whole family together at Christmas, including Riley's girlfriend Abby">
+      </div>
+      <div class="family-portrait-copy">
+        <strong>Christmas Together</strong>
+        <span>The whole family gathered close, including Landon and Riley's girlfriend Abby.</span>
       </div>
     </div>
     <div id="lori-memorial" class="lori-feature reveal">
