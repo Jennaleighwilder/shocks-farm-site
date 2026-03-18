@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.39 Acres · 1431 Hwy 70 N · Rogersville TN · The Shocks Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Uncial+Antiqua&family=Yellowtail&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rye&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0d0818;--dp:#1a0832;--pur:#3d1266;--teal:#0b5e5a;--tealmd:#0f7a74;--tlt:#15a89e;
+  --gold:#c9940a;--sun:#e8b90f;--bg:#f5d020;--amber:#d4700a;--rust:#a83010;
+  --grn:#1a4d1a;--grnmd:#266026;--mag:#a81858;--mlt:#d42070;--cream:#f4edd8;--ink:#100820;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--cream);font-family:'Libre Baskerville',Georgia,serif;font-size:17px;line-height:1.75;overflow-x:hidden;}
+
+/* GRAIN */
+body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.045;mix-blend-mode:overlay;}
+
+/* CURSOR */
+.cursor{position:fixed;width:20px;height:20px;border-radius:50%;background:rgba(232,185,15,.6);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;mix-blend-mode:screen;}
+.cursor-ring{position:fixed;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(232,185,15,.4);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform .15s ease-out,width .3s,height .3s;}
+
+/* PROGRESS BAR */
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--tlt),var(--sun),var(--mlt));z-index:9997;transition:width .1s linear;width:0%;}
+
+/* FLOATING PARTICLES */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+.pt{position:absolute;border-radius:50%;opacity:0;animation:ptFloat var(--dur,8s) var(--del,0s) ease-in-out infinite;}
+@keyframes ptFloat{0%{opacity:0;transform:translateY(100vh) rotate(0deg) scale(0);}20%{opacity:var(--op,.4);}80%{opacity:var(--op,.4);}100%{opacity:0;transform:translateY(-20vh) rotate(720deg) scale(1.5);}}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 6vw 6rem;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 50% -10%,rgba(201,148,10,.3) 0%,transparent 55%),
+  radial-gradient(ellipse at 0% 100%,rgba(11,94,90,.45) 0%,transparent 50%),
+  radial-gradient(ellipse at 100% 60%,rgba(168,24,88,.35) 0%,transparent 45%),
+  radial-gradient(ellipse at 30% 40%,rgba(94,31,158,.55) 0%,transparent 60%),
+  linear-gradient(170deg,#0d0818 0%,#1a0832 35%,#0d2010 70%,#0d0818 100%);
+  animation:bgPulse 8s ease-in-out infinite alternate;}
+@keyframes bgPulse{0%{filter:brightness(1);}100%{filter:brightness(1.12);}}
+.hero-orbs{position:absolute;inset:0;pointer-events:none;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orbFloat var(--od,12s) var(--odel,0s) ease-in-out infinite alternate;}
+.orb1{width:500px;height:500px;background:rgba(201,148,10,.12);top:-100px;left:-100px;--od:14s;}
+.orb2{width:400px;height:400px;background:rgba(11,94,90,.15);bottom:-80px;right:-80px;--od:11s;--odel:-3s;}
+.orb3{width:300px;height:300px;background:rgba(168,24,88,.12);top:40%;left:40%;--od:9s;--odel:-5s;}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1);}100%{transform:translate(40px,30px) scale(1.15);}}
+.hf{position:absolute;inset:18px;pointer-events:none;z-index:2;}
+.hf::before,.hf::after,.hf .c2,.hf .c3{content:'';position:absolute;width:70px;height:70px;}
+.hf::before{top:-2px;left:-2px;border-top:2.5px solid rgba(232,185,15,.7);border-left:2.5px solid rgba(232,185,15,.7);animation:cornerPulse 3s ease-in-out infinite alternate;}
+.hf::after{bottom:-2px;right:-2px;border-bottom:2.5px solid rgba(232,185,15,.7);border-right:2.5px solid rgba(232,185,15,.7);animation:cornerPulse 3s ease-in-out infinite alternate;}
+.hf .c2{bottom:-2px;left:-2px;border-bottom:2.5px solid rgba(232,185,15,.5);border-left:2.5px solid rgba(232,185,15,.5);}
+.hf .c3{top:-2px;right:-2px;border-top:2.5px solid rgba(232,185,15,.5);border-right:2.5px solid rgba(232,185,15,.5);}
+.hf-line{position:absolute;inset:18px;border:1px solid rgba(232,185,15,.1);pointer-events:none;}
+@keyframes cornerPulse{0%{opacity:.7;}100%{opacity:1;filter:drop-shadow(0 0 6px rgba(232,185,15,.5));}}
+.hi{position:relative;z-index:3;max-width:880px;width:100%;}
+.hey{font-family:'Rye',serif;font-size:.78rem;letter-spacing:.55em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:2rem;opacity:0;animation:ri 1s .2s ease-out forwards;}
+.hnum{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(6rem,17vw,13rem);line-height:.85;color:transparent;-webkit-text-stroke:2px var(--sun);text-shadow:0 0 80px rgba(232,185,15,.5),0 0 140px rgba(232,185,15,.2);display:block;letter-spacing:-.02em;opacity:0;animation:ri 1.2s .4s cubic-bezier(.16,1,.3,1) forwards;}
+.hac{font-family:'Yellowtail',cursive;font-size:clamp(2rem,6vw,4.5rem);color:var(--tlt);display:block;line-height:1;margin:.3rem 0 .8rem;text-shadow:0 0 40px rgba(21,168,158,.4);opacity:0;animation:ri .9s .7s ease-out forwards;}
+.htit{font-family:'Uncial Antiqua',serif;font-size:clamp(1.8rem,5vw,4rem);line-height:1.1;color:var(--cream);text-shadow:2px 2px 0 rgba(168,24,88,.6),0 0 50px rgba(212,112,10,.3);opacity:0;animation:ri 1s 1s ease-out forwards;display:block;}
+.htag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.45rem);color:#f5e8c0;background:rgba(0,0,0,.55);padding:.9rem 1.8rem;border-left:3px solid var(--sun);border-right:3px solid var(--sun);margin:2rem auto 2.5rem;max-width:600px;line-height:1.7;display:inline-block;opacity:0;animation:ri .8s 1.3s ease-out forwards;}
+.htr{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:ri .7s 1.6s ease-out forwards;}
+.ht{font-family:'Rye',serif;font-size:.82rem;padding:.65rem 1.5rem;letter-spacing:.1em;border:1.5px solid;transition:transform .2s,box-shadow .2s;}
+.ht:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.4);}
+.ht.g{color:var(--ink);background:var(--sun);border-color:var(--gold);}
+.ht.t{color:var(--cream);background:transparent;border-color:var(--tlt);}
+.ht.m{color:var(--cream);background:var(--mag);border-color:var(--mag);}
+.dr{margin:2.5rem auto 0;max-width:500px;display:flex;align-items:center;gap:1rem;opacity:0;animation:ri .6s 1.9s ease-out forwards;}
+.dr::before,.dr::after{content:'';flex:1;height:1px;background:linear-gradient(to var(--d,right),transparent,rgba(232,185,15,.5));}
+.dr::after{--d:left;}
+.dr span{font-family:'Cinzel Decorative',serif;font-size:1rem;color:rgba(232,185,15,.5);white-space:nowrap;}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;opacity:0;animation:ri .5s 2.2s ease-out forwards;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(232,185,15,.5);font-family:'Rye',serif;font-size:.65rem;letter-spacing:.3em;}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,rgba(232,185,15,.5),transparent);animation:scrollPulse 1.8s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}}
+@keyframes ri{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+/* STATS */
+.sb{background:var(--sun);display:flex;flex-wrap:wrap;position:relative;overflow:hidden;}
+.sb::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);animation:shimmer 3s ease-in-out infinite;}
+@keyframes shimmer{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+.sc{flex:1;min-width:120px;padding:1.6rem 1.2rem;text-align:center;border-right:2px solid rgba(13,8,24,.15);transition:background .2s;}
+.sc:last-child{border-right:none;}
+.sc:hover{background:rgba(255,255,255,.1);}
+.sbig{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:2rem;color:var(--ink);display:block;line-height:1;}
+.slbl{font-family:'Rye',serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,8,24,.75);display:block;margin-top:.35rem;}
+
+/* BANDS */
+.band{padding:7rem 6vw;position:relative;}
+.btl{background:linear-gradient(160deg,#081e1c 0%,#0b4a46 60%,#0a2820 100%);}
+.bgn{background:linear-gradient(160deg,var(--grn) 0%,#1c3c1c 100%);}
+.bpr{background:linear-gradient(160deg,var(--dp) 0%,var(--pur) 100%);}
+.bfo{background:linear-gradient(160deg,#0a1e10 0%,#112a18 60%,#0d1e0d 100%);}
+.bvo{background:linear-gradient(170deg,var(--void) 0%,#140a28 100%);}
+.bbu{background:radial-gradient(ellipse at 10% 20%,rgba(94,31,158,.3) 0%,transparent 50%),radial-gradient(ellipse at 90% 80%,rgba(11,94,90,.3) 0%,transparent 50%),linear-gradient(160deg,#0d0818 0%,#1a0832 50%,#081e1c 100%);}
+.cnt{max-width:1120px;margin:0 auto;}
+
+/* TYPE */
+.lbl{font-family:'Rye',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:1rem;}
+.hl{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.0;margin-bottom:.8rem;color:var(--sun);text-shadow:2px 2px 0 rgba(0,0,0,.5);}
+.bfo .hl{color:var(--bg);}
+.sh{font-family:'Yellowtail',cursive;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--tlt);display:block;margin-bottom:2rem;line-height:1.2;}
+.bfo .sh,.bgn .sh{color:var(--sun);}
+.bp{font-family:'Libre Baskerville',serif;font-size:1rem;line-height:1.85;max-width:66ch;margin-bottom:1.4rem;color:rgba(244,237,216,.88);}
+.pull{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,2.8vw,1.85rem);line-height:1.5;color:#f5d878;border-left:4px solid var(--gold);padding:1.2rem 2rem;margin:3rem 0;background:rgba(201,148,10,.1);position:relative;}
+.pull::before{content:'\201C';font-family:'Playfair Display',serif;font-size:5rem;line-height:0;position:absolute;top:2.5rem;left:.8rem;color:rgba(201,148,10,.22);}
+.wave{display:block;width:100%;overflow:hidden;line-height:0;}
+
+/* PARALLAX SECTION HEADERS */
+.par-label{font-family:'Rye',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:1rem;transform:translateX(-20px);opacity:0;transition:all .8s ease;}
+.par-label.up{transform:translateX(0);opacity:1;}
+
+/* STORY */
+.sg{display:grid;grid-template-columns:1.35fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
+.fp{background:rgba(201,148,10,.07);border:1.5px solid rgba(232,185,15,.3);padding:2.5rem;position:sticky;top:2rem;}
+.fpt{font-family:'Yellowtail',cursive;font-size:2rem;color:var(--sun);text-align:center;margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(232,185,15,.2);}
+.fm{padding:1rem 0;border-bottom:1px solid rgba(232,185,15,.12);transition:background .2s;cursor:default;}
+.fm:last-child{border-bottom:none;padding-bottom:0;}
+.fm:hover{background:rgba(232,185,15,.04);padding-left:.5rem;transition:padding .2s,background .2s;}
+.fmn{font-family:'Uncial Antiqua',serif;font-size:1.12rem;color:var(--tlt);display:block;margin-bottom:.3rem;}
+.fmb{font-family:'Libre Baskerville',serif;font-size:.9rem;color:rgba(244,237,216,.88);line-height:1.6;font-style:normal;}
+
+/* PHOTO MOSAIC */
+.mo-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:3rem;}
+.mo{overflow:hidden;position:relative;}
+.mo.a{grid-column:span 8;aspect-ratio:16/9;}
+.mo.b{grid-column:span 4;aspect-ratio:3/4;grid-row:span 2;}
+.mo.c,.mo.d,.mo.e,.mo.f{grid-column:span 4;aspect-ratio:4/3;}
+.mo.g{grid-column:span 8;aspect-ratio:16/9;}
+.mo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,filter .5s;filter:saturate(1.1) brightness(.88) contrast(1.05);}
+.mo:hover img{transform:scale(1.06);filter:saturate(1.3) brightness(1.02) contrast(1.05);}
+.moc{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,8,24,.85) 0%,transparent 55%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:1.2rem;}
+.mo:hover .moc{opacity:1;}
+.moc span{font-family:'Rye',serif;font-size:.78rem;letter-spacing:.12em;color:var(--sun);}
+.mph{width:100%;height:100%;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:.88rem;color:rgba(232,185,15,.32);text-align:center;padding:1.5rem;line-height:1.6;gap:.5rem;}
+.mph span{font-size:2rem;}
+
+/* LAND */
+.ls{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
+.liw{position:relative;}
+.lph{width:100%;min-height:320px;display:flex;align-items:stretch;justify-content:center;border:2px solid rgba(232,185,15,.4);font-family:'Playfair Display',serif;font-style:italic;color:rgba(232,185,15,.32);font-size:1rem;text-align:center;padding:0;background:linear-gradient(135deg,#0e2010,#162a1a);overflow:hidden;}
+.lph img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block;filter:saturate(1.02) brightness(.92);}
+.lst{position:absolute;bottom:-1.8rem;right:-1.8rem;background:var(--sun);color:var(--ink);font-family:'Cinzel Decorative',serif;font-weight:900;font-size:1.6rem;padding:.9rem 1.3rem;box-shadow:5px 5px 0 rgba(0,0,0,.4);}
+.ol{list-style:none;margin-top:.5rem;}
+.oi{padding:1.4rem 1.5rem;border-left:4px solid var(--gold);background:rgba(201,148,10,.08);margin-bottom:1.2rem;transition:border-color .2s,background .2s,transform .2s;}
+.oi:hover{border-left-color:var(--sun);background:rgba(201,148,10,.14);transform:translateX(4px);}
+.oi:nth-child(2){border-left-color:var(--tlt);}
+.oi:nth-child(3){border-left-color:var(--mlt);}
+.oi:nth-child(4){border-left-color:var(--amber);}
+.oh{font-family:'Uncial Antiqua',serif;font-size:1.05rem;color:var(--sun);display:block;margin-bottom:.5rem;}
+.oi:nth-child(2) .oh{color:var(--tlt);}
+.oi:nth-child(3) .oh{color:var(--mlt);}
+.oi:nth-child(4) .oh{color:var(--amber);}
+.op{font-family:'Libre Baskerville',serif;font-size:.92rem;color:rgba(244,237,216,.9);line-height:1.72;}
+
+/* UPDATES */
+.ug{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3rem;}
+.uc{background:rgba(255,255,255,.03);border:1px solid rgba(232,185,15,.2);border-top:3px solid var(--gold);padding:2rem;transition:transform .25s,border-top-color .2s,box-shadow .25s;}
+.uc:hover{transform:translateY(-6px);border-top-color:var(--sun);box-shadow:0 12px 30px rgba(0,0,0,.4);}
+.ui{font-size:1.8rem;margin-bottom:.8rem;display:block;}
+.ut{font-family:'Uncial Antiqua',serif;font-size:1.05rem;color:var(--sun);margin-bottom:.5rem;}
+.up{font-family:'Libre Baskerville',serif;font-size:.87rem;color:rgba(244,237,216,.75);line-height:1.65;max-width:100%;}
+
+/* FINANCING */
+.fr{display:flex;flex-wrap:wrap;gap:1.2rem;margin:3.5rem 0 2.5rem;justify-content:center;}
+.fb{background:var(--cream);color:var(--ink);padding:2rem 2.2rem;text-align:center;flex:1;min-width:150px;position:relative;box-shadow:6px 6px 0 rgba(0,0,0,.35);transition:transform .2s,box-shadow .2s;}
+.fb:hover{transform:translateY(-5px) rotate(-.5deg);box-shadow:10px 10px 0 rgba(0,0,0,.4);}
+.fb::before{content:'';position:absolute;inset:4px;border:1px solid rgba(13,8,24,.12);pointer-events:none;}
+.fn{font-family:'Cinzel Decorative',serif;font-size:2.1rem;color:var(--pur);display:block;line-height:1;margin-bottom:.4rem;}
+.fl{font-family:'Rye',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(13,8,24,.55);}
+.lr{display:flex;gap:1.5rem;flex-wrap:wrap;margin:2rem 0;justify-content:center;}
+.lt{background:transparent;border:1.5px solid var(--gold);padding:.7rem 1.6rem;font-family:'Uncial Antiqua',serif;font-size:.95rem;color:var(--sun);transition:background .2s,color .2s;}
+.lt:hover{background:var(--gold);color:var(--ink);}
+.fn2{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--tlt);text-align:center;max-width:55ch;margin:1.5rem auto 0;line-height:1.7;}
+
+/* EXTRAS */
+.er{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:3rem;}
+.ex{flex:1;min-width:260px;border:1.5px solid rgba(232,185,15,.3);padding:2.5rem;background:rgba(232,185,15,.04);transition:border-color .25s,transform .25s,box-shadow .25s;}
+.ex:hover{border-color:var(--sun);transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.4);}
+.xl{font-family:'Rye',serif;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem;}
+.ex h3{font-family:'Uncial Antiqua',serif;font-size:1.4rem;color:var(--sun);margin-bottom:1rem;}
+.ex p{font-family:'Libre Baskerville',serif;font-size:.9rem;color:rgba(244,237,216,.8);line-height:1.75;max-width:100%;}
+
+/* COMMUNITY BANNERS */
+.hb{background:rgba(201,148,10,.07);border:1.5px solid rgba(232,185,15,.3);padding:2.8rem;margin-bottom:3rem;position:relative;transition:border-color .3s,box-shadow .3s;}
+.hb:hover{border-color:rgba(232,185,15,.6);box-shadow:0 0 40px rgba(232,185,15,.08);}
+.hb::before,.hb::after{content:'';position:absolute;width:50px;height:50px;}
+.hb::before{top:-2px;left:-2px;border-top:3px solid var(--sun);border-left:3px solid var(--sun);}
+.hb::after{bottom:-2px;right:-2px;border-bottom:3px solid var(--sun);border-right:3px solid var(--sun);}
+.hbt{font-family:'Cinzel Decorative',serif;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--sun);margin-bottom:.4rem;}
+.hbs{font-family:'Yellowtail',cursive;font-size:1.5rem;color:var(--tlt);display:block;margin-bottom:1rem;}
+.hbb{font-family:'Libre Baskerville',serif;font-size:.95rem;color:rgba(244,237,216,.85);line-height:1.8;max-width:80ch;margin-bottom:1rem;}
+.hbl{display:inline-block;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.2em;color:var(--sun);border-bottom:1px solid rgba(232,185,15,.4);text-decoration:none;margin-right:2rem;transition:color .2s,border-color .2s;}
+.hbl:hover{color:var(--bg);border-bottom-color:var(--bg);}
+.fm-badge{display:inline-block;background:var(--sun);color:var(--ink);font-family:'Cinzel Decorative',serif;font-size:.72rem;padding:.3rem .8rem;margin-left:.6rem;vertical-align:middle;letter-spacing:.05em;}
+
+/* ACTIVITY CARDS */
+.act-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.act-card{background:rgba(11,94,90,.12);border:1px solid rgba(21,168,158,.25);padding:2rem;transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default;}
+.act-card:hover{border-color:var(--tlt);transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.4);}
+.ac-icon{font-size:2.2rem;display:block;margin-bottom:.8rem;}
+.ac-title{font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--tlt);margin-bottom:.5rem;}
+.ac-body{font-family:'Libre Baskerville',serif;font-size:.87rem;color:rgba(244,237,216,.78);line-height:1.65;max-width:100%;}
+.ac-link{font-family:'Rye',serif;font-size:.62rem;letter-spacing:.15em;color:var(--sun);text-decoration:none;display:inline-block;margin-top:.6rem;border-bottom:1px solid rgba(232,185,15,.3);transition:color .2s;}
+.ac-link:hover{color:var(--bg);}
+
+/* DISTANCES */
+.lc2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;}
+.dl{list-style:none;}
+.dl li{display:flex;gap:1rem;padding:.65rem 0;border-bottom:1px solid rgba(232,185,15,.12);font-family:'Libre Baskerville',serif;font-size:.95rem;align-items:baseline;color:rgba(244,237,216,.85);transition:background .15s;}
+.dl li:hover{background:rgba(232,185,15,.04);padding-left:.5rem;transition:padding .2s,background .2s;}
+.dl li .pl{flex:1;}
+.dl li .di{font-family:'Uncial Antiqua',serif;color:var(--tlt);font-size:.9rem;flex-shrink:0;}
+.disc{background:rgba(168,48,16,.12);border:1.5px solid rgba(168,48,16,.4);padding:1.5rem 2rem;margin-top:2rem;}
+.disc p{font-family:'Libre Baskerville',serif;font-size:.88rem;color:#e09070;line-height:1.7;font-style:italic;max-width:100%;}
+.lcg{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:1rem;}
+.lcard{background:rgba(255,255,255,.04);border:1px solid rgba(232,185,15,.18);padding:1.6rem;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.lcard:hover{border-color:rgba(232,185,15,.5);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.35);}
+.lcat{font-family:'Rye',serif;font-size:.63rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem;}
+.lnm{font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--sun);margin-bottom:.3rem;}
+.lds{font-family:'Libre Baskerville',serif;font-size:.83rem;color:rgba(244,237,216,.72);line-height:1.55;}
+.llk{font-family:'Rye',serif;font-size:.65rem;letter-spacing:.15em;color:var(--tlt);text-decoration:none;display:inline-block;margin-top:.6rem;border-bottom:1px solid rgba(21,168,158,.3);transition:color .2s;}
+.llk:hover{color:var(--sun);}
+.mbr{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2rem;}
+.mbtn{display:inline-flex;align-items:center;gap:.7rem;background:rgba(21,168,158,.1);border:1.5px solid var(--tlt);color:var(--tlt);text-decoration:none;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.15em;padding:.8rem 1.4rem;transition:background .2s,color .2s,transform .15s;}
+.mbtn:hover{background:rgba(21,168,158,.22);color:var(--cream);transform:translateY(-2px);}
+
+/* HAWKINS FREEDOM */
+.hw-hero{background:linear-gradient(135deg,rgba(26,77,26,.8),rgba(13,8,24,.9));border:2px solid rgba(232,185,15,.35);padding:3rem;margin-bottom:3rem;position:relative;text-align:center;overflow:hidden;}
+.hw-hero::before,.hw-hero::after{content:'';position:absolute;width:60px;height:60px;}
+.hw-hero::before{top:-2px;left:-2px;border-top:3px solid var(--sun);border-left:3px solid var(--sun);}
+.hw-hero::after{bottom:-2px;right:-2px;border-bottom:3px solid var(--sun);border-right:3px solid var(--sun);}
+.hw-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(232,185,15,.06) 0%,transparent 70%);border-radius:50%;animation:glowPulse 4s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.2);}}
+.hw-big{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--bg);text-shadow:2px 2px 0 rgba(0,0,0,.5);margin-bottom:.5rem;position:relative;}
+.hw-sub{font-family:'Yellowtail',cursive;font-size:1.8rem;color:var(--tlt);display:block;margin-bottom:1.5rem;position:relative;}
+.hw-body{font-family:'Libre Baskerville',serif;font-size:1rem;color:rgba(244,237,216,.88);line-height:1.85;max-width:78ch;margin:0 auto;position:relative;}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:2.5rem;}
+.fc{background:rgba(26,77,26,.25);border:1px solid rgba(232,185,15,.22);border-top:3px solid var(--gold);padding:2rem;transition:border-color .2s,transform .25s,box-shadow .25s;}
+.fc:hover{border-color:rgba(232,185,15,.5);transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.4);}
+.fc:nth-child(2){border-top-color:var(--tlt);}
+.fc:nth-child(3){border-top-color:var(--mlt);}
+.fc:nth-child(4){border-top-color:var(--amber);}
+.fc-ic{font-size:2rem;display:block;margin-bottom:.8rem;}
+.fc-ti{font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--sun);margin-bottom:.5rem;}
+.fc:nth-child(2) .fc-ti{color:var(--tlt);}
+.fc:nth-child(3) .fc-ti{color:var(--mlt);}
+.fc:nth-child(4) .fc-ti{color:var(--amber);}
+.fc-bo{font-family:'Libre Baskerville',serif;font-size:.88rem;color:rgba(244,237,216,.82);line-height:1.7;max-width:100%;}
+.law{font-family:'Rye',serif;font-size:.6rem;letter-spacing:.12em;color:rgba(232,185,15,.45);display:block;margin-top:.6rem;}
+
+/* LOOKING TO BUY */
+.bg2{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
+.bp2{background:rgba(21,168,158,.06);border:1.5px solid rgba(21,168,158,.3);padding:2.5rem;}
+.bp2 h3{font-family:'Yellowtail',cursive;font-size:1.8rem;color:var(--tlt);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(21,168,158,.2);}
+.ri{padding:.9rem 0;border-bottom:1px solid rgba(21,168,158,.12);display:flex;gap:1rem;align-items:flex-start;transition:background .15s;}
+.ri:last-child{border-bottom:none;padding-bottom:0;}
+.ri:hover{background:rgba(21,168,158,.04);padding-left:.4rem;transition:padding .2s,background .2s;}
+.ri-ic{font-size:1.2rem;flex-shrink:0;margin-top:.1rem;}
+.ri-tx{font-family:'Libre Baskerville',serif;font-size:.9rem;color:rgba(244,237,216,.85);line-height:1.6;}
+.ri-tx strong{font-family:'Uncial Antiqua',serif;color:var(--tlt);display:block;margin-bottom:.2rem;font-size:.95rem;}
+.fo-items{margin-top:2rem;}
+.fo{background:rgba(201,148,10,.06);border-left:4px solid var(--gold);padding:1.2rem 1.5rem;margin-bottom:1rem;transition:background .2s,transform .2s;}
+.fo:hover{background:rgba(201,148,10,.1);transform:translateX(4px);}
+.fo:nth-child(2){border-left-color:var(--tlt);}
+.fo:nth-child(3){border-left-color:var(--mlt);}
+.fo-ti{font-family:'Uncial Antiqua',serif;font-size:1rem;color:var(--sun);display:block;margin-bottom:.3rem;}
+.fo:nth-child(2) .fo-ti{color:var(--tlt);}
+.fo:nth-child(3) .fo-ti{color:var(--mlt);}
+.fo-de{font-family:'Libre Baskerville',serif;font-size:.87rem;color:rgba(244,237,216,.8);line-height:1.65;}
+
+/* COUNTER ANIMATION */
+.counter{display:inline-block;font-variant-numeric:tabular-nums;}
+
+/* CTA */
+.cta{padding:10rem 6vw;text-align:center;position:relative;overflow:hidden;background:
+  radial-gradient(ellipse at 50% 0%,rgba(232,185,15,.2) 0%,transparent 55%),
+  radial-gradient(ellipse at 0% 100%,rgba(11,94,90,.32) 0%,transparent 50%),
+  linear-gradient(170deg,var(--void) 0%,#1a0832 50%,var(--grn) 100%);}
+.cta-bg-anim{position:absolute;inset:0;pointer-events:none;}
+.cta-orb{position:absolute;border-radius:50%;filter:blur(100px);animation:ctaOrbFloat 10s ease-in-out infinite alternate;}
+.cta-orb1{width:600px;height:600px;background:rgba(232,185,15,.05);top:-200px;left:-200px;}
+.cta-orb2{width:500px;height:500px;background:rgba(168,24,88,.06);bottom:-150px;right:-150px;animation-delay:-5s;}
+@keyframes ctaOrbFloat{0%{transform:scale(1) translate(0,0);}100%{transform:scale(1.2) translate(30px,20px);}}
+.cin{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.cbig{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(2.6rem,7vw,6rem);line-height:1.0;color:var(--sun);text-shadow:3px 3px 0 rgba(168,24,88,.5),0 0 60px rgba(232,185,15,.3);margin-bottom:1.5rem;}
+.csc{font-family:'Yellowtail',cursive;font-size:clamp(1.6rem,4vw,2.8rem);color:var(--tlt);display:block;margin-bottom:2rem;text-shadow:0 0 30px rgba(21,168,158,.4);}
+.cbo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(244,237,216,.8);max-width:54ch;margin:0 auto 3.5rem;line-height:1.8;}
+.brow{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:5rem;}
+.bm{background:var(--sun);color:var(--ink);font-family:'Cinzel Decorative',serif;font-size:.88rem;font-weight:700;padding:1.1rem 3rem;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.08em;box-shadow:5px 5px 0 var(--amber);transition:box-shadow .15s,transform .15s;}
+.bm:hover{transform:translateY(-4px);box-shadow:9px 9px 0 var(--amber);}
+.bo2{background:transparent;color:var(--cream);font-family:'Rye',serif;font-size:.88rem;padding:1.1rem 3rem;border:1.5px solid rgba(244,237,216,.4);cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.12em;transition:border-color .2s,transform .15s,background .2s;}
+.bo2:hover{border-color:var(--cream);background:rgba(255,255,255,.05);transform:translateY(-4px);}
+.cbox{border:1.5px solid rgba(232,185,15,.4);max-width:560px;margin:0 auto;padding:3rem;background:rgba(255,255,255,.03);position:relative;}
+.cbox::before,.cbox::after{content:'';position:absolute;width:50px;height:50px;}
+.cbox::before{top:-2px;left:-2px;border-top:3px solid var(--sun);border-left:3px solid var(--sun);}
+.cbox::after{bottom:-2px;right:-2px;border-bottom:3px solid var(--sun);border-right:3px solid var(--sun);}
+.cbt{font-family:'Yellowtail',cursive;font-size:1.8rem;color:var(--sun);text-align:center;margin-bottom:1.8rem;}
+.cr{display:flex;gap:1.2rem;padding:.7rem 0;border-bottom:1px solid rgba(232,185,15,.12);font-family:'Libre Baskerville',serif;font-size:.9rem;color:rgba(244,237,216,.82);align-items:flex-start;}
+.cr:last-child{border-bottom:none;}
+.cl{font-family:'Rye',serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);flex-shrink:0;min-width:65px;padding-top:2px;}
+.contact-cards{max-width:760px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.contact-card{padding:2rem;position:relative;transition:transform .25s,box-shadow .25s;}
+.contact-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.5);}
+.cc-agent{border:1.5px solid rgba(232,185,15,.35);background:rgba(201,148,10,.06);}
+.cc-owners{border:1.5px solid rgba(21,168,158,.35);background:rgba(11,94,90,.06);}
+.cc-lbl{font-family:'Rye',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;display:block;margin-bottom:.6rem;}
+.cc-agent .cc-lbl{color:var(--gold);}
+.cc-owners .cc-lbl{color:var(--tlt);}
+.cc-name{font-family:'Yellowtail',cursive;font-size:1.6rem;margin-bottom:.4rem;}
+.cc-agent .cc-name{color:var(--sun);}
+.cc-owners .cc-name{color:var(--tlt);}
+.cc-sub{font-family:'Libre Baskerville',serif;font-size:.85rem;color:rgba(244,237,216,.78);margin-bottom:1.2rem;line-height:1.6;}
+.cc-btn{display:block;font-family:'Cinzel Decorative',serif;font-size:.75rem;padding:.8rem 1rem;text-align:center;text-decoration:none;margin-bottom:.8rem;letter-spacing:.05em;font-weight:700;transition:transform .15s,box-shadow .15s;}
+.cc-btn:hover{transform:translateY(-2px);}
+.cc-btn.primary{background:var(--sun);color:var(--ink);box-shadow:3px 3px 0 var(--amber);}
+.cc-btn.primary:hover{box-shadow:5px 5px 0 var(--amber);}
+.cc-btn.teal{background:var(--tlt);color:var(--ink);box-shadow:3px 3px 0 var(--teal);}
+.cc-btn.teal:hover{box-shadow:5px 5px 0 var(--teal);}
+.cc-btn.outline-gold{background:transparent;color:var(--sun);border:1.5px solid var(--sun);}
+.cc-btn.outline-teal{background:transparent;color:var(--tlt);border:1.5px solid var(--tlt);}
+
+/* ORNAMENT */
+.orn{text-align:center;margin:0 0 2.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;}
+.orn::before,.orn::after{content:'';flex:1;max-width:200px;height:1px;background:linear-gradient(to var(--od,right),transparent,rgba(232,185,15,.32));}
+.orn::after{--od:left;}
+.orn span{font-family:'Cinzel Decorative',serif;font-size:1rem;color:rgba(232,185,15,.4);letter-spacing:.3em;}
+
+/* SUNFLOWER COUNTER (fun stats) */
+.fun-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin:3rem 0;padding:2.5rem;background:rgba(232,185,15,.04);border:1px solid rgba(232,185,15,.15);}
+.fstat{text-align:center;padding:1rem;}
+.fstat-num{font-family:'Cinzel Decorative',serif;font-size:2.8rem;color:var(--sun);display:block;line-height:1;}
+.fstat-lbl{font-family:'Rye',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,237,216,.6);display:block;margin-top:.4rem;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;animation:revealFallback 1s 2s ease-out forwards;}
+.reveal.up{opacity:1;transform:translateY(0);animation:none;}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .75s ease,transform .75s ease;animation:revealFallback 1s 2s ease-out forwards;}
+.reveal-left.up{opacity:1;transform:translateX(0);animation:none;}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .75s ease,transform .75s ease;animation:revealFallback 1s 2s ease-out forwards;}
+.reveal-right.up{opacity:1;transform:translateX(0);animation:none;}
+@keyframes revealFallback{to{opacity:1;transform:none;}}
+
+
+/* YOUTUBE */
+.yt-section{background:linear-gradient(160deg,#0a0818 0%,#120828 100%);padding:5rem 6vw;}
+.yt-wrap{max-width:900px;margin:0 auto;text-align:center;}
+.yt-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:2px solid rgba(232,185,15,.35);box-shadow:0 0 60px rgba(232,185,15,.1),0 20px 60px rgba(0,0,0,.6);}
+.yt-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.yt-label{font-family:'Rye',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:1rem;}
+.yt-title{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(1.8rem,4vw,3rem);color:var(--sun);margin-bottom:.5rem;}
+.yt-sub{font-family:'Yellowtail',cursive;font-size:1.6rem;color:var(--tlt);display:block;margin-bottom:2.5rem;}
+
+footer{background:var(--void);border-top:1px solid rgba(232,185,15,.12);color:rgba(244,237,216,.35);text-align:center;padding:3rem 6vw;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.1em;line-height:2.2;}
+footer a{color:var(--gold);text-decoration:none;}
+
+@media(max-width:800px){
+  .sg,.ls,.lc2,.bg2{grid-template-columns:1fr;}
+  .fp,.contact-cards{position:static;}
+  .mo-grid{grid-template-columns:1fr 1fr;}
+  .mo.a,.mo.g{grid-column:span 2;}
+  .mo.b{grid-column:span 1;grid-row:span 1;aspect-ratio:4/3;}
+  .sb{flex-direction:column;}
+  .sc{border-right:none;border-bottom:2px solid rgba(13,8,24,.12);}
+  .fg{grid-template-columns:1fr;}
+  .contact-cards{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+<div id="particles"></div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+  <div class="hf"><div class="c2"></div><div class="c3"></div></div>
+  <div class="hf-line"></div>
+  <div class="hi">
+    <span class="hey">Rogersville · Hawkins County · Tennessee</span>
+    <span class="hnum">5.39</span>
+    <span class="hac">acres of</span>
+    <div class="htit">Pure Love &amp; Land</div>
+    <p class="htag">A homestead born from heartache, built with grit, and offered with open hands — to the right family, at the right time.</p>
+    <div class="htr">
+      <span class="ht g">$98,900</span>
+      <span class="ht t">2 Bed · 1 Bath · 700 sqft</span>
+      <span class="ht m">Owner Financing Available</span>
+    </div>
+    <div class="dr"><span>✦ ✦ ✦</span></div>
+  </div>
+  <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
+</header>
+
+<div class="sb">
+  <div class="sc"><span class="sbig"><span class="counter" data-target="5.39" data-decimal="2">0</span></span><span class="slbl">Unrestricted Acres</span></div>
+  <div class="sc"><span class="sbig"><span class="counter" data-target="700" data-decimal="0">0</span></span><span class="slbl">Square Feet</span></div>
+  <div class="sc"><span class="sbig">HWY 70</span><span class="slbl">Road Frontage</span></div>
+  <div class="sc"><span class="sbig">$<span class="counter" data-target="264" data-decimal="0">0</span></span><span class="slbl">Annual Taxes</span></div>
+  <div class="sc"><span class="sbig"><span class="counter" data-target="1986" data-decimal="0">0</span></span><span class="slbl">Year Built</span></div>
+</div>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:var(--sun)"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#081e1c"/></svg>
+
+<section class="band btl">
+  <div class="cnt">
+    <div class="sg">
+      <div>
+        <span class="lbl reveal">The Family Behind This Land</span>
+        <h2 class="hl reveal">Loved Hard.<br>Lived Full.</h2>
+        <span class="sh reveal">This isn't just a listing — it's a love story.</span>
+        <p class="bp reveal">Rachelle and Andrew didn't just buy this land — they poured their whole hearts into it. After watching Rachelle's mama pass from cancer, they used her final gift — the inheritance she left behind — to plant roots right here in Hawkins County, Tennessee.</p>
+        <div class="pull reveal">The last of her mother's money bought this place. That means something.</div>
+        <p class="bp reveal">Rachelle is a former tennis pro and breast cancer survivor who beat a double mastectomy, hysterectomy, and chemotherapy — and came out swinging. Andrew is half Filipino, born in Michigan, a builder and swimmer, a man in long-term recovery who speaks openly to others walking that same road. Together they are unstoppable.</p>
+        <p class="bp reveal">They built gardens here. A goat pen. A chicken hutch. They tore out bad plumbing and started fresh. Hung a new water heater. Upgraded every floor. They made this space feel like home — because that is simply what they do.</p>
+        <p class="bp reveal">Now their children are growing up. Riley, 19, is pursuing his electrician's license. Landon is a straight-A 16-year-old at Cherokee High. Willow, 9, travels to tennis tournaments with her mama. This family has outgrown the square footage — not the love for this earth.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="fp">
+          <div class="fpt">The Shocks Family</div>
+          <div class="fm"><span class="fmn">Rachelle</span><span class="fmb">Former tennis pro · Bachelor of Science · Breast cancer survivor · Earth mama · Tennis coach · Sunflower soul</span></div>
+          <div class="fm"><span class="fmn">Andrew</span><span class="fmb">Half Filipino · Michigan raised · Builder · Swimmer · Recovery advocate · Future food truck entrepreneur · Heart of gold</span></div>
+          <div class="fm"><span class="fmn">Riley — 19</span><span class="fmb">Pursuing electrician apprenticeship and licensure · The firstborn who figures things out</span></div>
+          <div class="fm"><span class="fmn">Landon — 16</span><span class="fmb">Straight-A student at Cherokee High School · The quiet one who surprises everyone</span></div>
+          <div class="fm"><span class="fmn">Willow — 9</span><span class="fmb">Straight-A · Competitive tennis · Homeschooled to travel and compete alongside her mother</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#081e1c"><path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="#1a0832"/></svg>
+
+<section class="band bpr">
+  <div class="cnt">
+    <div class="orn reveal"><span>✦</span></div>
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+      <span class="lbl">The Property</span>
+      <h2 class="hl">See What Love Built</h2>
+      <span class="sh" style="color:var(--tlt);">Going on five years of care — since October 2021</span>
+    </div>
+    <div class="mo-grid reveal">
+      <div class="mo a"><img src="images/aerial-property.png" alt="Aerial view of the 5.39-acre property on Highway 70 North"><div class="moc"><span>5.39 Acres · Highway 70 North</span></div></div>
+      <div class="mo b"><img src="images/exterior-red-barn.png" alt="Exterior of the home with the red barn beside it"><div class="moc"><span>Exterior · Red Barn</span></div></div>
+      <div class="mo c"><img src="images/living-room.png" alt="Living room with vaulted ceiling and front entry"><div class="moc"><span>Living Room · Cathedral Ceiling</span></div></div>
+      <div class="mo d"><img src="images/kitchen.webp" alt="Kitchen with updated countertops and stainless range"><div class="moc"><span>Kitchen · New Countertops</span></div></div>
+      <div class="mo e"><img src="images/bathroom.png" alt="Bathroom with granite vanity and tub shower combo"><div class="moc"><span>Renovated Bath · Granite Vanity</span></div></div>
+      <div class="mo f"><img src="images/primary-bedroom.png" alt="Primary bedroom with updated flooring"><div class="moc"><span>Primary Bedroom</span></div></div>
+      <div class="mo g"><img src="images/second-bedroom-office.png" alt="Second bedroom set up as a flexible office and sleeping space"><div class="moc"><span>Second Bedroom · Flex Space</span></div></div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(244,237,216,.3);">Current listing photos are now loaded into the gallery.</p>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#1a0832"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#0a1e10"/></svg>
+
+<section class="band bfo">
+  <div class="cnt">
+    <span class="lbl reveal">The Land</span>
+    <h2 class="hl reveal">Almost Six Acres<br>of Possibility</h2>
+    <div class="ls">
+      <div class="liw reveal-left">
+        <div class="lph"><img src="images/aerial-property.png" alt="Aerial overview of the 5.39-acre land and road frontage"></div>
+        <div class="lst">5.39 ac</div>
+      </div>
+      <ul class="ol reveal-right">
+        <li class="oi"><span class="oh">Highway 70 Commercial Frontage</span><p class="op">Highway 70 is Rogersville's main commercial corridor — the same stretch growing beside Walmart. Roadside business, farm stand, food truck pad — the front of this property is primed for it.</p></li>
+        <li class="oi"><span class="oh">Ridge Build Site with Views</span><p class="op">Grade a road up the hill and you have a private hilltop homesite with sweeping Tennessee views. The upper acreage is untouched and entirely waiting.</p></li>
+        <li class="oi"><span class="oh">Unrestricted · No HOA · No Covenants</span><p class="op">Do whatever you want with this land. Chickens, goats, gardens, workshops, a second structure — this family proved it all works.</p></li>
+        <li class="oi"><span class="oh">Priced for the Vision, Not the Trailer</span><p class="op">Nearly six acres with highway frontage under $100,000. The home needs work — the price reflects that honestly. The land value alone makes this extraordinary.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#0a1e10"><path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="#1a0832"/></svg>
+
+<section class="band bpr">
+  <div class="cnt">
+    <span class="lbl reveal">What They Did</span>
+    <h2 class="hl reveal">Sweat, Care &amp; Real Work</h2>
+    <span class="sh reveal">They didn't flip this — they lived it.</span>
+    <div class="ug">
+      <div class="uc reveal"><span class="ui">🔧</span><div class="ut">Full Plumbing Replacement</div><p class="up">Not patched — replaced. New lines throughout the entire home.</p></div>
+      <div class="uc reveal"><span class="ui">🔥</span><div class="ut">New Water Heater</div><p class="up">Brand new system. Hot water you can count on.</p></div>
+      <div class="uc reveal"><span class="ui">🪵</span><div class="ut">New Countertops</div><p class="up">Fresh kitchen countertops — a solid start for the next owner.</p></div>
+      <div class="uc reveal"><span class="ui">🏠</span><div class="ut">New Flooring Throughout</div><p class="up">Upgraded floors across the whole home. Immediate transformation.</p></div>
+      <div class="uc reveal"><span class="ui">🛁</span><div class="ut">Renovated Bathroom</div><p class="up">Granite vanity, updated fixtures, new cabinetry. A genuine upgrade.</p></div>
+      <div class="uc reveal"><span class="ui">🌿</span><div class="ut">Working Homestead</div><p class="up">Gardens. Chicken hutch. Goat pen. The land is already alive.</p></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#1a0832"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#081e1c"/></svg>
+
+<section class="band btl">
+  <div class="cnt">
+    <span class="lbl reveal">Open for Discussion</span>
+    <h2 class="hl reveal">It May Come With More</h2>
+    <div class="er">
+      <div class="ex reveal-left"><span class="xl">The Outbuilding</span><h3>The Red Barn</h3><p>The red storage building is open for negotiation — extra workspace, tool storage, or the foundation of something new.</p></div>
+      <div class="ex reveal-right"><span class="xl">The Livestock</span><h3>The Chickens</h3><p>Rachelle would love her hens to stay with someone who will love them. A working flock ready to go — homestead life from day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#081e1c"><path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="#1a4d1a"/></svg>
+
+<section class="band bgn">
+  <div class="cnt" style="text-align:center;">
+    <span class="lbl reveal">A Path to Ownership</span>
+    <h2 class="hl reveal">Owner Financing Available</h2>
+    <span class="sh reveal">For the right family, at the right time</span>
+    <p class="bp reveal" style="margin:0 auto .5rem;text-align:center;">Rachelle and Andrew want this land in hands that will love it. Open to owner financing — sizable down payment, demonstrated income, one-year payoff. Terms through a real estate attorney.</p>
+    <div class="fr reveal">
+      <div class="fb"><span class="fn">$98,900</span><span class="fl">Asking Price</span></div>
+      <div class="fb"><span class="fn">~$540</span><span class="fl">Est. Monthly</span></div>
+      <div class="fb"><span class="fn">$264</span><span class="fl">Annual Taxes</span></div>
+      <div class="fb"><span class="fn">0%</span><span class="fl">USDA Down Min.</span></div>
+    </div>
+    <div class="lr reveal">
+      <div class="lt">USDA Eligible — 0% Down</div>
+      <div class="lt">FHA — 3.5% Down</div>
+      <div class="lt">Owner Finance · Right Buyer</div>
+    </div>
+    <p class="fn2 reveal">Owner financing requires a meaningful down payment, verified income, and a one-year payoff formalized through a licensed real estate attorney.</p>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#1a4d1a"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#0d0818"/></svg>
+
+<section class="band btl">
+  <div class="cnt">
+    <span class="lbl reveal">Life in Rogersville</span>
+    <h2 class="hl reveal">Hawkins County, Tennessee</h2>
+    <span class="sh reveal">Tennessee's second-oldest town — and proud of every year</span>
+
+    <div class="hb reveal">
+      <div class="hbt">Heritage Days Festival</div>
+      <span class="hbs">Every October · Downtown Rogersville · Top 20 Events in the Southeast</span>
+      <p class="hbb">Heritage Days draws nearly 40,000 visitors every second full weekend of October, since 1978. Over 175 craft artists line Main Street. Appalachian musicians fill the Town Square. Civil War reenactments at Crockett Spring Park. The Great Chili Cook-Off at the 1824 Hale Springs Inn. Children's parades. Antique farm equipment. Blacksmithing, basketry, pottery. A Quilt Show inside the 1836 Hawkins County Courthouse. The Heritage Train on Depot Street. Named East Tennessee's Best Festival by Tennessee Magazine. Voted #9 in the nation for vendor revenue by Sunshine Artist Magazine.</p>
+      <a href="https://www.rogersvilleheritage.org/heritage-days-festival" target="_blank" class="hbl">Heritage Days Official →</a>
+      <a href="https://rogersvilletnchamber.com/events/heritage-days/" target="_blank" class="hbl">Chamber Info →</a>
+      <a href="https://www.google.com/maps/place/Downtown+Rogersville,+TN" target="_blank" class="hbl">Find on Maps →</a>
+    </div>
+
+    <div class="hb reveal" style="background:rgba(21,168,158,.06);border-color:rgba(21,168,158,.3);">
+      <div class="hbt" style="color:var(--tlt);">Rogersville Farmers Market <span class="fm-badge">Tues &amp; Fri</span></div>
+      <span class="hbs">May–August · 8am–12pm · First Baptist Church Parking Lot · 119 W. Washington St.</span>
+      <p class="hbb">Every Tuesday and Friday morning from May through August, the First Baptist Church parking lot at the corner of Main and Hasson fills with local vendors: fresh-picked vegetables, seasonal fruits, farm eggs, artisan goat milk soap, homemade bread, marmalade, cookies, toffee, local honey. Half the vendors grew it or baked it themselves. It's not just a market — it's where the community shows up for each other. Check their Facebook page for current-season updates.</p>
+      <a href="https://www.facebook.com/search/top?q=rogersville%20farmers%20market" target="_blank" class="hbl" style="color:var(--tlt);border-bottom-color:rgba(21,168,158,.4);">Check Facebook →</a>
+      <a href="https://www.google.com/maps/place/First+Baptist+Church+119+W+Washington+St+Rogersville+TN" target="_blank" class="hbl" style="color:var(--tlt);border-bottom-color:rgba(21,168,158,.4);">Get Directions →</a>
+    </div>
+
+    <span class="lbl reveal" style="margin-top:1rem;">Water, Wildlife &amp; the Great Outdoors</span>
+    <h3 class="reveal" style="font-family:'Yellowtail',cursive;font-size:2rem;color:var(--sun);margin-bottom:2rem;">The Holston River &amp; Cherokee Lake — Right Here</h3>
+    <div class="act-row">
+      <div class="act-card reveal"><span class="ac-icon">🎣</span><div class="ac-title">Holston River Fishing</div><p class="ac-body">Less than 10 miles away — rainbow and brown trout, native smallmouth bass, walleye. Below Cherokee Dam is East Tennessee's best-kept fly fishing secret: far less crowded than the South Holston, with fish up to 20 inches. Best March through August. Access at Nance's Ferry ramp.</p><a href="https://www.google.com/maps/search/Nance+Ferry+Boat+Ramp+Rogersville+TN" target="_blank" class="ac-link">Nance's Ferry Ramp →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">⛵</span><div class="ac-title">Cherokee Lake — 30,000 Acres</div><p class="ac-body">TVA reservoir right in Hawkins County. Nearly 400 miles of shoreline. Swimming, boating, kayaking, sailing, paddleboarding, camping. Ranked #20 by Bassmaster in the Top 25 bass lakes in the entire Southeast. Panther Creek State Park has 17 hiking trails and 15+ miles of bike trails.</p><a href="https://www.google.com/maps/place/Cherokee+Lake+Tennessee" target="_blank" class="ac-link">Cherokee Lake on Maps →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🦌</span><div class="ac-title">Hunting Country</div><p class="ac-body">Hawkins County is genuine hunting country — whitetail deer, wild turkey, black bear in the nearby mountains, waterfowl along the Holston. With unrestricted rural acreage, you can hunt your own land. The Clinch Mountain Wildlife Management Area is close by for public land access.</p><a href="https://www.tn.gov/twra/hunting.html" target="_blank" class="ac-link">TN Hunting Licenses (TWRA) →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🏈</span><div class="ac-title">UT Knoxville — Go Vols</div><p class="ac-body">Knoxville and the University of Tennessee are about an hour away. Neyland Stadium holds 100,000+. Rocky Top. The Vol Walk. Big Orange game days are a Tennessee rite of passage — and from Rogersville, it's a totally doable day trip.</p><a href="https://www.google.com/maps/dir/Rogersville+TN/Neyland+Stadium+Knoxville+TN" target="_blank" class="ac-link">Directions to Neyland →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🎸</span><div class="ac-title">Bristol Rhythm &amp; Roots</div><p class="ac-body">The Birthplace of Country Music is 40 minutes away. Every September, Bristol Rhythm &amp; Roots Reunion fills historic State Street with 20+ stages, 100+ acts, and 20,000 roots music lovers — country, bluegrass, Americana, folk, blues. One of the top music festivals in the Southeast.</p><a href="https://www.bristolrhythm.com" target="_blank" class="ac-link">bristolrhythm.com →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🎢</span><div class="ac-title">Dollywood &amp; Pigeon Forge</div><p class="ac-body">Dollywood is 1 hr 15 min away. Rollercoasters, live entertainment, Southern food, craft culture against the Smokies. Pigeon Forge, Gatlinburg, and the Great Smoky Mountains National Park — America's most visited national park — are minutes beyond that. Your family vacation is a day trip.</p><a href="https://www.google.com/maps/dir/Rogersville+TN/Dollywood+Pigeon+Forge+TN" target="_blank" class="ac-link">Directions to Dollywood →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🏔</span><div class="ac-title">Asheville, NC — 2 Hours</div><p class="ac-body">Asheville is the arts capital of the Southeast — world-class music venues, the Biltmore Estate, the River Arts District, some of the best restaurants in the South. The Blue Ridge Parkway connects you through stunning mountain scenery. For a creative, musical family, Asheville is the cultural anchor of the whole region.</p><a href="https://www.google.com/maps/dir/Rogersville+TN/Asheville+NC" target="_blank" class="ac-link">Directions to Asheville →</a></div>
+      <div class="act-card reveal"><span class="ac-icon">🎵</span><div class="ac-title">Greeneville &amp; the Region</div><p class="ac-body">Greeneville — about 40 minutes away — is one of East Tennessee's most charming small cities, home to Andrew Johnson's birthplace, stunning historic architecture, and a growing arts scene. The entire Tri-Cities region (Kingsport, Johnson City, Bristol) is within 30–45 minutes and offers every amenity, hospital, and university you could need.</p><a href="https://www.google.com/maps/dir/Rogersville+TN/Greeneville+TN" target="_blank" class="ac-link">Directions to Greeneville →</a></div>
+    </div>
+
+    <div class="lc2 reveal" style="margin-top:4rem;">
+      <div>
+        <p style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--sun);margin-bottom:1rem;">Getting There</p>
+        <div class="mbr" style="margin-bottom:2rem;">
+          <a href="https://www.google.com/maps/dir//1431+Highway+70+N,+Rogersville,+TN+37857" target="_blank" class="mbtn">📍 Directions to Property</a>
+          <a href="https://www.google.com/maps/place/1431+Highway+70+N,+Rogersville,+TN+37857" target="_blank" class="mbtn">🗺 View on Google Maps</a>
+        </div>
+        <ul class="dl">
+          <li><span class="pl">Food City / Dollar General / Big Lots</span><span class="di">3.2–3.4 mi</span></li>
+          <li><span class="pl">Holston River — fishing access</span><span class="di">&lt;10 mi</span></li>
+          <li><span class="pl">Joseph Rogers Primary (K–2)</span><span class="di">2.2 mi</span></li>
+          <li><span class="pl">Rogersville Middle (6–8)</span><span class="di">3.7 mi</span></li>
+          <li><span class="pl">Cherokee High (9–12)</span><span class="di">7.9 mi</span></li>
+          <li><span class="pl">Cherokee Lake</span><span class="di">~15 mi</span></li>
+          <li><span class="pl">Kingsport</span><span class="di">~30 min</span></li>
+          <li><span class="pl">Greeneville</span><span class="di">~40 min</span></li>
+          <li><span class="pl">Bristol (Rhythm &amp; Roots)</span><span class="di">~40 min</span></li>
+          <li><span class="pl">Tri-Cities Airport (TRI)</span><span class="di">~40 min</span></li>
+          <li><span class="pl">Morristown</span><span class="di">~35 min</span></li>
+          <li><span class="pl">Knoxville / UT Vols</span><span class="di">~1 hr</span></li>
+          <li><span class="pl">McGhee Tyson Airport (TYS)</span><span class="di">~1 hr 10 min</span></li>
+          <li><span class="pl">Dollywood / Pigeon Forge</span><span class="di">~1 hr 15 min</span></li>
+          <li><span class="pl">Gatlinburg / Smokies</span><span class="di">~1 hr 20 min</span></li>
+          <li><span class="pl">Asheville, NC</span><span class="di">~2 hours</span></li>
+        </ul>
+        <div class="disc">
+          <p>Disclosure: Power lines run adjacent to the property — precisely why nearly six acres with Hwy 70 frontage is listed under $100,000. The sellers are fully transparent. The land value and opportunity remain genuinely exceptional.</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--sun);margin-bottom:1rem;">Eat · Stay · Explore</p>
+        <div class="lcg">
+          <div class="lcard"><span class="lcat">Fine Dining · Historic Setting</span><div class="lnm">Amis Mill Eatery</div><div class="lds">1800s-era restaurant on a historic stone dam and waterfall. New Orleans-inspired Southern cooking. The gumbo is legendary.</div><a href="https://www.google.com/maps/search/Amis+Mill+Eatery+Rogersville+TN" target="_blank" class="llk">Directions →</a></div>
+          <div class="lcard"><span class="lcat">Downtown Taproom</span><div class="lnm">Red Dog on Main</div><div class="lds">Beloved Main Street pub with craft beers, great pub fare, and outdoor seating. A Rogersville staple.</div><a href="https://www.google.com/maps/search/Red+Dog+On+Main+Rogersville+TN" target="_blank" class="llk">Directions →</a></div>
+          <div class="lcard"><span class="lcat">Historic Inn Built 1824</span><div class="lnm">Hale Springs Inn</div><div class="lds">Tennessee's oldest continuously operating inn. McKinney's Tavern inside. Heritage Days Chili Cook-Off home base.</div><a href="https://www.halespringsinn.com" target="_blank" class="llk">Official Site →</a></div>
+          <div class="lcard"><span class="lcat">Where to Stay</span><div class="lnm">Comfort Inn &amp; Suites · Quality Inn</div><div class="lds">Clean and convenient to the property and downtown. Kingsport (30 min) has a full range of hotel options.</div><a href="https://www.tripadvisor.com/Hotels-g55309-Rogersville_Tennessee-Hotels.html" target="_blank" class="llk">All Rogersville Hotels →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#081e1c"><path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="#0d0818"/></svg>
+
+<section class="band bvo">
+  <div class="cnt">
+    <div class="orn reveal"><span>✦</span></div>
+    <span class="lbl reveal" style="text-align:center;display:block;">Why Hawkins County is Different</span>
+    <div class="hw-hero reveal">
+      <div class="hw-glow"></div>
+      <div class="hw-big">No Zoning. No Permits. No Permission Needed.</div>
+      <span class="hw-sub">Hawkins County is one of the most homesteader-friendly places in America</span>
+      <p class="hw-body">Tennessee state law explicitly prohibits counties from requiring building permits for structures on agricultural land. No HOA, no zoning ordinance outside city limits, no setback requirements. If it serves your farm, you build it — barn, greenhouse, chicken house, workshop, root cellar, smokehouse — without asking anyone's permission. And as a working farm, you pay dramatically less in taxes. This is land freedom most Americans don't know still exists.</p>
+    </div>
+    <div class="fg">
+      <div class="fc reveal"><span class="fc-ic">🏗</span><div class="fc-ti">No Permits for Farm Structures</div><p class="fc-bo">Counties cannot require building permits for any structure on agricultural land that is incidental to the farming operation. Barn, greenhouse, workshop, chicken house — if it serves the farm, you build it. No permit. No inspections. No fees.</p><span class="law">Tenn. Code Ann. § 13-7-114(a)</span></div>
+      <div class="fc reveal"><span class="fc-ic">🌾</span><div class="fc-ti">Agricultural Tax Exemptions</div><p class="fc-bo">A Tennessee Agricultural Sales and Use Tax Exemption Certificate means no sales tax on farming inputs — equipment, fencing, building materials used for ag purposes, seeds, feed, livestock supplies, and most property used primarily in your operation.</p><span class="law">Tenn. Code Ann. § 67-6-207</span></div>
+      <div class="fc reveal"><span class="fc-ic">🏡</span><div class="fc-ti">No Zoning = Total Land Freedom</div><p class="fc-bo">Hawkins County has no county-wide zoning ordinance. Outside city limits, you face no land use restrictions, setback requirements, or neighborhood regulations. Chickens, goats, food truck, roadside farm stand on Highway 70? All of it — yours to do.</p><span class="law">Hawkins County, TN — Unincorporated Land</span></div>
+      <div class="fc reveal"><span class="fc-ic">💰</span><div class="fc-ti">Greenbelt Law — Lower Taxes</div><p class="fc-bo">Tennessee's Greenbelt Law allows qualifying agricultural land to be assessed at agricultural use value rather than market value. Designate this a working farm and taxes stay low even as land values rise. $264/year is already extraordinary.</p><span class="law">Tenn. Code Ann. § 67-5-1001</span></div>
+    </div>
+    <div style="background:rgba(232,185,15,.06);border:1px solid rgba(232,185,15,.2);padding:2rem;margin-top:2.5rem;text-align:center;" class="reveal">
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:#f5d878;line-height:1.8;max-width:80ch;margin:0 auto;">Buy this land, declare it a working farm, and you can build almost anything related to that farm without asking anyone's permission — while paying near-zero taxes. This is East Tennessee homestead freedom at its finest.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:var(--void)"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#0d0818"/></svg>
+
+<section class="band bbu">
+  <div class="cnt">
+    <div class="orn reveal"><span>✦</span></div>
+    <span class="lbl reveal" style="text-align:center;display:block;">The Other Side of This Story</span>
+    <h2 class="hl reveal" style="text-align:center;">We Are Also<br>Looking for Home</h2>
+    <span class="sh reveal" style="text-align:center;color:var(--tlt);">Rachelle &amp; Andrew's Forever Home — They're Ready</span>
+    <p class="bp reveal" style="margin:0 auto 1rem;text-align:center;max-width:70ch;">While they are selling this beloved land, Rachelle and Andrew are simultaneously searching for their forever home — the place where the kids grow up, where the gardens are permanent, and where the Shocks family puts down roots they never pull up.</p>
+    <div class="bg2">
+      <div>
+        <span class="lbl reveal">What They're Looking For</span>
+        <div class="bp2 reveal">
+          <h3>The Dream Property</h3>
+          <div class="ri"><span class="ri-ic">🌿</span><div class="ri-tx"><strong>10–20 Acres Minimum</strong>At least 10 acres — ideally a mix of open pasture and wooded land in roughly equal parts.</div></div>
+          <div class="ri"><span class="ri-ic">🏡</span><div class="ri-tx"><strong>A Well-Developed Home</strong>A nice, livable home already on the property. Open to a modular or manufactured home if it is well-kept and move-in ready.</div></div>
+          <div class="ri"><span class="ri-ic">💧</span><div class="ri-tx"><strong>A Water Source</strong>A creek, pond, spring, or reliable well. Water access is a priority — it makes everything else possible on a homestead.</div></div>
+          <div class="ri"><span class="ri-ic">🌱</span><div class="ri-tx"><strong>Gardens &amp; Fencing a Bonus</strong>Already-established gardens or fencing in place is a major plus — but they will build from raw land with the right home setup.</div></div>
+          <div class="ri"><span class="ri-ic">📍</span><div class="ri-tx"><strong>Within 30–50 Min of Cherokee High</strong>The kids need to stay within reach of Cherokee High School in Rogersville. Max 45 minutes — 50 at the outside limit.</div></div>
+          <div class="ri"><span class="ri-ic">💰</span><div class="ri-tx"><strong>$350,000 Max · ~$30K Down Available</strong>Looking to stay at or under $350K. Approximately $30,000 in cash for a down payment, with strong willingness to explore creative financing.</div></div>
+        </div>
+      </div>
+      <div>
+        <span class="lbl reveal">How They Can Make It Work</span>
+        <p class="bp reveal">Rachelle and Andrew are creative, flexible, and serious buyers open to arrangements most sellers never consider — including a property exchange that could move everyone forward faster.</p>
+        <div class="fo-items reveal">
+          <div class="fo"><span class="fo-ti">Owner Financing</span><span class="fo-de">Open to owner financing with thoughtful terms — legitimate down payment, structured payments, and a clear path to full ownership. Formalized through a licensed real estate attorney.</span></div>
+          <div class="fo"><span class="fo-ti">Property Exchange / Trade</span><span class="fo-de">If you have property and are interested in their Hwy 70 land, they are open to a trade — applying their current property's value toward yours, then transitioning the balance to owner financing. A clean exchange that benefits both parties.</span></div>
+          <div class="fo"><span class="fo-ti">Any Creative Arrangement</span><span class="fo-de">Lease-to-own, seller carryback, partial exchange, unusual terms — if it is legal, fair, and gets both families into their right place, they will have the conversation.</span></div>
+        </div>
+        <p class="bp reveal" style="margin-top:2rem;font-style:italic;font-family:'Playfair Display',serif;color:rgba(244,237,216,.65);">If you have a property that could be their forever home — or know someone who does — please reach out. They are ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#0d0818"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#0d0818"/></svg>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#0d0818"><path d="M0,70 C400,0 1040,0 1440,70 L1440,70 L0,70 Z" fill="#0a0818"/></svg>
+
+<section class="yt-section">
+  <div class="yt-wrap">
+    <span class="yt-label reveal">Meet the Land</span>
+    <div class="yt-title reveal">Watch the Story</div>
+    <span class="yt-sub reveal">See it with your own eyes</span>
+    <div class="yt-frame reveal">
+      <iframe
+        src="https://www.youtube.com/embed/48tz_8NZp5c?si=w97U0GOf4a2So5TV&rel=0&modestbranding=1"
+        title="1431 Highway 70 N — Rogersville, TN — The Shocks Family"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="background:#0a0818"><path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="#0d0818"/></svg>
+
+
+<section class="cta">
+  <div class="cta-bg-anim"><div class="cta-orb cta-orb1"></div><div class="cta-orb cta-orb2"></div></div>
+  <div class="cin">
+    <span class="lbl reveal" style="color:var(--sun);">Come See It · Connect With Us</span>
+    <div class="cbig reveal">This Land Is<br>Looking For You</div>
+    <span class="csc reveal">Ready when you are</span>
+    <p class="cbo reveal">Rachelle and Andrew built something real here — through loss, through cancer, through love. They are ready to hand it forward. Come walk this land. Feel it under your feet. It has a story left to tell.</p>
+    <div class="brow reveal">
+      <a href="https://www.griffinhomegroup.com/agents/ward-tanner/" target="_blank" class="bm">griffinhomegroup.com</a>
+      <a href="https://www.realtor.com/realestateandhomes-detail/1431-Highway-70-N_Rogersville_TN_37857_M71955-75676" target="_blank" class="bo2">View on Realtor.com</a>
+      <a href="https://www.google.com/maps/dir//1431+Highway+70+N,+Rogersville,+TN+37857" target="_blank" class="bo2">Get Directions</a>
+    </div>
+    <div class="cbox reveal">
+      <div class="cbt">1431 Highway 70 North</div>
+      <div class="cr"><span class="cl">Address</span><span>Rogersville, TN 37857 · Hawkins County</span></div>
+      <div class="cr"><span class="cl">MLS</span><span>#9990264 · TNVARegionalMLS</span></div>
+      <div class="cr"><span class="cl">Price</span><span>$98,900 · reduced from $105,000</span></div>
+      <div class="cr"><span class="cl">Taxes</span><span>$264/yr · Unrestricted · No HOA</span></div>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="contact-card cc-agent">
+        <span class="cc-lbl">Your Listing Agent</span>
+        <div class="cc-name">Ward Tanner</div>
+        <div class="cc-sub">Griffin Home Group · EXP Realty<br>MLS #9990264 · TNVARegionalMLS</div>
+        <a href="https://www.griffinhomegroup.com/agents/ward-tanner/" target="_blank" class="cc-btn primary">griffinhomegroup.com →</a>
+        <a href="tel:4235613718" class="cc-btn outline-gold">📞 423-561-3718</a>
+        <a href="https://www.facebook.com/p/Ward-Tanner-Realtor-100083003881185/" target="_blank" class="cc-btn outline-gold">Facebook Page →</a>
+        <a href="https://www.homes.com/real-estate-agents/ward-tanner/w03vz6l/" target="_blank" class="cc-btn outline-gold">homes.com Profile →</a>
+      </div>
+      <div class="contact-card cc-owners">
+        <span class="cc-lbl">The Owners · Direct Contact</span>
+        <div class="cc-name">Rachelle &amp; Andrew Shock</div>
+        <div class="cc-sub">Open to all inquiries<br>Selling &amp; buying · Creative financing welcome</div>
+        <a href="tel:8282737242" class="cc-btn teal">📞 Rachelle: 828-273-7242</a>
+        <a href="mailto:rachelleshock@gmail.com" class="cc-btn outline-teal">✉ rachelleshock@gmail.com</a>
+        <a href="tel:5704604027" class="cc-btn teal">📞 Andrew: 570-460-4027</a>
+        <a href="mailto:shockflooring@gmail.com" class="cc-btn outline-teal">✉ shockflooring@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>1431 Highway 70 N &nbsp;·&nbsp; Rogersville, TN 37857 &nbsp;·&nbsp; Hawkins County, Tennessee</p>
+  <p>Listed on <a href="https://www.realtor.com/realestateandhomes-detail/1431-Highway-70-N_Rogersville_TN_37857_M71955-75676" target="_blank">Realtor.com</a> &nbsp;·&nbsp; <a href="https://www.griffinhomegroup.com/agents/ward-tanner/" target="_blank">griffinhomegroup.com</a> &nbsp;·&nbsp; MLS #9990264 &nbsp;·&nbsp; Ward Tanner · Griffin Home Group · EXP Realty</p>
+  <p style="margin-top:1.2rem;opacity:.5;font-family:'Libre Baskerville',serif;font-style:italic;font-size:.72rem;letter-spacing:.04em;">For informational purposes only · All details subject to verification · Power line proximity disclosed · Owner financing subject to attorney review · Agricultural/permit info based on TN state law — consult a professional for your specific use case</p>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(animRing);}animRing();
+document.querySelectorAll('a,button,.ht,.fb,.fc,.uc,.mo,.act-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='36px';cur.style.height='36px';curR.style.width='60px';curR.style.height='60px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='20px';cur.style.height='20px';curR.style.width='44px';curR.style.height='44px';});
+});
+
+// PROGRESS BAR
+const prog=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(s/h*100)+'%';
+});
+
+// PARTICLES
+const ptCont=document.getElementById('particles');
+const colors=['rgba(232,185,15,',  'rgba(21,168,158,','rgba(168,24,88,','rgba(245,208,32,'];
+for(let i=0;i<35;i++){
+  const pt=document.createElement('div');
+  pt.className='pt';
+  const size=Math.random()*8+3;
+  const col=colors[Math.floor(Math.random()*colors.length)];
+  pt.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;background:${col}0.6);--dur:${Math.random()*12+6}s;--del:-${Math.random()*12}s;--op:${Math.random()*.35+.1};`;
+  ptCont.appendChild(pt);
+}
+
+// SCROLL REVEAL
+const revEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('up'),i*70);io.unobserve(e.target);}
+  });
+},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+revEls.forEach(el=>io.observe(el));
+
+// COUNTER ANIMATION
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target);
+  const dec=parseInt(el.dataset.decimal)||0;
+  const dur=1800;
+  const start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const ease=p<.5?2*p*p:(4-2*p)*p-1;
+    const val=target*ease;
+    el.textContent=val.toFixed(dec);
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target.toFixed(dec);
+  }
+  requestAnimationFrame(step);
+}
+const ctrObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);ctrObs.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>ctrObs.observe(el));
+
+// SUNFLOWER CURSOR TRAIL
+let trail=[];
+document.addEventListener('mousemove',e=>{
+  if(Math.random()>.7){
+    const sf=document.createElement('div');
+    sf.innerHTML='🌻';
+    sf.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;font-size:${Math.random()*14+8}px;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);animation:sfFade .8
