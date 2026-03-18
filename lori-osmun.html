@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In Loving Memory of Lori Osmun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Uncial+Antiqua&family=Yellowtail&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rye&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0d0818;--dp:#1a0832;--pur:#3d1266;--teal:#0b5e5a;--tlt:#15a89e;
+  --gold:#c9940a;--sun:#e8b90f;--bg:#f5d020;--amber:#d4700a;
+  --grn:#1a4d1a;--mag:#a81858;--cream:#f4edd8;--ink:#100820;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:
+  radial-gradient(ellipse at top,rgba(201,148,10,.14) 0%,transparent 45%),
+  radial-gradient(ellipse at bottom right,rgba(21,168,158,.12) 0%,transparent 40%),
+  linear-gradient(180deg,#0d0818 0%,#140a28 100%);
+  color:var(--cream);font-family:'Libre Baskerville',Georgia,serif;line-height:1.8;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");}
+.shell{max-width:1180px;margin:0 auto;padding:2rem 6vw 5rem;}
+.back-link{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sun);padding:.9rem 1.2rem;border:1px solid rgba(232,185,15,.3);background:rgba(232,185,15,.05);margin-bottom:2rem;transition:transform .18s,background .18s,border-color .18s;}
+.back-link:hover{transform:translateY(-2px);background:rgba(232,185,15,.1);border-color:rgba(232,185,15,.55);}
+.hero{position:relative;padding:3rem;border:1.5px solid rgba(232,185,15,.28);background:
+  radial-gradient(circle at top right,rgba(168,24,88,.12),transparent 35%),
+  radial-gradient(circle at bottom left,rgba(21,168,158,.14),transparent 32%),
+  rgba(255,255,255,.025);
+  box-shadow:0 20px 55px rgba(0,0,0,.3);overflow:hidden;}
+.hero::before,.hero::after{content:'';position:absolute;width:62px;height:62px;}
+.hero::before{top:-2px;left:-2px;border-top:2px solid rgba(232,185,15,.72);border-left:2px solid rgba(232,185,15,.72);}
+.hero::after{bottom:-2px;right:-2px;border-bottom:2px solid rgba(232,185,15,.5);border-right:2px solid rgba(232,185,15,.5);}
+.hero-grid{display:grid;grid-template-columns:minmax(290px,380px) 1fr;gap:2.4rem;align-items:center;}
+.photo-card{background:rgba(0,0,0,.28);border:1.5px solid rgba(232,185,15,.22);overflow:hidden;}
+.photo-card img{display:block;width:100%;height:100%;max-height:560px;object-fit:cover;}
+.caption{padding:1rem 1.1rem;background:rgba(13,8,24,.82);font-size:.88rem;color:rgba(244,237,216,.8);}
+.label{display:block;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.44em;text-transform:uppercase;color:var(--sun);margin-bottom:1rem;}
+h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2rem,5vw,4rem);line-height:1.03;color:var(--sun);margin-bottom:.75rem;text-shadow:2px 2px 0 rgba(0,0,0,.35);}
+.sub{display:block;font-family:'Yellowtail',cursive;font-size:clamp(1.5rem,3vw,2.3rem);color:var(--tlt);margin-bottom:1.2rem;}
+.dates{display:inline-block;font-family:'Rye',serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,237,216,.66);padding:.75rem 1rem;border:1px solid rgba(232,185,15,.2);background:rgba(0,0,0,.25);margin-bottom:1.5rem;}
+.lead{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.25rem,2.7vw,1.7rem);line-height:1.6;color:#f5d878;max-width:28ch;border-left:4px solid rgba(232,185,15,.45);padding-left:1.1rem;}
+.section{margin-top:2rem;padding:2.2rem;background:rgba(255,255,255,.025);border:1px solid rgba(232,185,15,.14);}
+.section p{font-size:1rem;color:rgba(244,237,216,.9);max-width:72ch;margin-bottom:1.2rem;}
+.section p:last-child{margin-bottom:0;}
+.quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,2.8vw,1.85rem);line-height:1.6;color:#f5d878;border-left:4px solid var(--gold);padding:1.1rem 1.5rem;background:rgba(201,148,10,.08);}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:1.4rem;}
+.media-card{padding:1.5rem;border:1.5px solid rgba(232,185,15,.22);background:rgba(201,148,10,.05);}
+.media-card h3{font-family:'Uncial Antiqua',serif;font-size:1.18rem;color:var(--sun);margin-bottom:.8rem;}
+.media-card p{font-size:.92rem;color:rgba(244,237,216,.8);max-width:none;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1.5px solid rgba(232,185,15,.28);box-shadow:0 14px 34px rgba(0,0,0,.35);margin-bottom:1rem;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+footer{padding:3rem 0 1rem;text-align:center;color:rgba(244,237,216,.46);font-family:'Rye',serif;font-size:.72rem;letter-spacing:.1em;}
+footer a{color:var(--sun);text-decoration:none;}
+@media(max-width:900px){
+  .hero-grid,.media-grid{grid-template-columns:1fr;}
+  .hero{padding:2rem;}
+}
+</style>
+</head>
+<body>
+<main class="shell">
+  <a class="back-link" href="index.html#lori-memorial">← Back to the family page</a>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="photo-card">
+        <img src="images/lori-willow.jpg" alt="Lori Osmun with Willow as a baby">
+        <p class="caption">Lori Osmun with Willow — a grandmother whose love still echoes through the family.</p>
+      </div>
+      <div>
+        <span class="label">In Loving Memory</span>
+        <h1>Lori Osmun</h1>
+        <span class="sub">A mother, grandmother, healer, and the quiet reason this first home became possible.</span>
+        <div class="dates">April 28, 1954 — February 3, 2021</div>
+        <p class="lead">The first home was built with her love before it was ever built with lumber.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p>Lori Osmun was born in Lyons, New York. She spent her life in medicine, beginning as an X-ray technician and later becoming a CT technologist. She took great pride in her work and in caring for the people who passed through her imaging rooms over the years.</p>
+    <p>She met her husband while she was studying radiography — he was her professor. They married and built a life together, raising a family and welcoming two young boys from his previous marriage.</p>
+    <p>Lori was a beautiful and sophisticated woman who took pride in everything she did. She loved dressing up, traveling, antiquing, and keeping an immaculate home. Creativity was always close to her hands. She cross-stitched, crafted, and spent time making things with her grandchildren.</p>
+    <p>One of her favorite outings with the kids was to <strong>Country Junction</strong>, where they could visit the animals at the petting zoo and wander the store together.</p>
+    <p>She was also a devoted Queen fan, and few songs captured her spirit like <em>Bohemian Rhapsody</em>.</p>
+    <p>Her grandchildren and children adored her, and her passing came far too soon. The family still feels her presence everywhere they go.</p>
+  </section>
+
+  <section class="section">
+    <div class="quote">She helped make their first home possible, and in many ways she is still there — woven into the walls, the memories, and the life that continues.</div>
+  </section>
+
+  <section class="section" id="lori-media">
+    <span class="label">Songs & Memory</span>
+    <div class="media-grid">
+      <div class="media-card">
+        <h3>One of Lori's Favorite Songs</h3>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ?rel=0&modestbranding=1" title="Queen - Bohemian Rhapsody" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p>Queen's <em>Bohemian Rhapsody</em> was one of the songs that felt like her.</p>
+      </div>
+      <div class="media-card">
+        <h3>A Video the Family Wanted Here</h3>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/5zLnaNY58j8?rel=0&modestbranding=1" title="Family remembrance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p>A remembrance held close and kept here with her page.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>With love for Lori Osmun and the family who carries her with them.</p>
+    <p style="margin-top:.8rem;"><a href="index.html">Return to the listing</a></p>
+  </footer>
+</main>
+</body>
+</html>

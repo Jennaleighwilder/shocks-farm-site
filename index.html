@@ -123,6 +123,32 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 .fm:hover{background:rgba(232,185,15,.04);padding-left:.5rem;transition:padding .2s,background .2s;}
 .fmn{font-family:'Uncial Antiqua',serif;font-size:1.12rem;color:var(--tlt);display:block;margin-bottom:.3rem;}
 .fmb{font-family:'Libre Baskerville',serif;font-size:.9rem;color:rgba(244,237,216,.88);line-height:1.6;font-style:normal;}
+.story-mini-label{font-family:'Rye',serif;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(232,185,15,.72);display:block;margin:3.2rem 0 1rem;}
+.family-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.2rem;}
+.family-shot{position:relative;overflow:hidden;min-height:220px;border:1.5px solid rgba(232,185,15,.22);background:rgba(0,0,0,.24);box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .25s,border-color .25s,box-shadow .25s;}
+.family-shot.hero{grid-column:span 2;grid-row:span 2;min-height:460px;}
+.family-shot img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) brightness(.9);transition:transform .7s ease,filter .4s ease;}
+.family-shot::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,8,24,.92) 0%,rgba(13,8,24,.16) 52%,transparent 80%);}
+.family-shot:hover{transform:translateY(-5px);border-color:rgba(232,185,15,.5);box-shadow:0 18px 38px rgba(0,0,0,.4);}
+.family-shot:hover img{transform:scale(1.05);filter:saturate(1.15) brightness(.98);}
+.family-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1rem 1.05rem;}
+.family-cap strong{display:block;font-family:'Uncial Antiqua',serif;font-size:1rem;color:var(--sun);margin-bottom:.18rem;}
+.family-cap span{display:block;font-family:'Libre Baskerville',serif;font-size:.78rem;line-height:1.55;color:rgba(244,237,216,.82);}
+.lori-feature{margin-top:2rem;display:grid;grid-template-columns:320px 1fr;gap:2rem;align-items:stretch;padding:1.5rem;background:rgba(201,148,10,.08);border:1.5px solid rgba(232,185,15,.28);position:relative;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.24);}
+.lori-feature::before,.lori-feature::after{content:'';position:absolute;width:54px;height:54px;}
+.lori-feature::before{top:-2px;left:-2px;border-top:2px solid rgba(232,185,15,.72);border-left:2px solid rgba(232,185,15,.72);}
+.lori-feature::after{bottom:-2px;right:-2px;border-bottom:2px solid rgba(232,185,15,.48);border-right:2px solid rgba(232,185,15,.48);}
+.lori-photo{position:relative;overflow:hidden;min-height:360px;border:1.5px solid rgba(232,185,15,.22);background:rgba(0,0,0,.25);}
+.lori-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.04) brightness(.94);}
+.lori-copy{position:relative;z-index:1;}
+.lori-copy h3{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1;color:var(--sun);margin-bottom:.35rem;}
+.lori-date{font-family:'Rye',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,237,216,.62);margin-bottom:1rem;}
+.lori-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;line-height:1.7;color:#f5d878;padding-left:1rem;border-left:3px solid rgba(232,185,15,.5);margin-top:.8rem;}
+.lori-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+.story-link{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.4rem;text-decoration:none;font-family:'Rye',serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--sun);border:1.5px solid var(--gold);box-shadow:4px 4px 0 rgba(0,0,0,.3);transition:transform .18s,box-shadow .18s,background .18s;}
+.story-link:hover{transform:translateY(-3px);box-shadow:7px 7px 0 rgba(0,0,0,.35);background:var(--bg);}
+.story-link.alt{background:transparent;color:var(--sun);border-color:rgba(232,185,15,.42);box-shadow:none;}
+.story-link.alt:hover{background:rgba(232,185,15,.08);box-shadow:none;}
 
 /* PHOTO MOSAIC */
 .mo-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:3rem;}
@@ -368,6 +394,10 @@ footer a{color:var(--gold);text-decoration:none;}
   .sc{border-right:none;border-bottom:2px solid rgba(13,8,24,.12);}
   .fg{grid-template-columns:1fr;}
   .contact-cards{grid-template-columns:1fr;}
+  .family-gallery{grid-template-columns:1fr 1fr;}
+  .family-shot.hero{grid-column:span 2;grid-row:span 1;min-height:320px;}
+  .lori-feature{grid-template-columns:1fr;}
+  .lori-photo{min-height:320px;}
 }
 </style>
 </head>
@@ -429,6 +459,75 @@ footer a{color:var(--gold);text-decoration:none;}
           <div class="fm"><span class="fmn">Riley — 19</span><span class="fmb">Pursuing electrician apprenticeship and licensure · The firstborn who figures things out</span></div>
           <div class="fm"><span class="fmn">Landon — 16</span><span class="fmb">Straight-A student at Cherokee High School · The quiet one who surprises everyone</span></div>
           <div class="fm"><span class="fmn">Willow — 9</span><span class="fmb">Straight-A · Competitive tennis · Homeschooled to travel and compete alongside her mother</span></div>
+        </div>
+      </div>
+    </div>
+    <span class="story-mini-label reveal">Family Life on the Land</span>
+    <div class="family-gallery">
+      <div class="family-shot hero reveal">
+        <img src="images/family-christmas.jpg" alt="The whole family together at Christmas, including Riley's girlfriend Abby">
+        <div class="family-cap">
+          <strong>Christmas Together</strong>
+          <span>The whole family gathered close, including Riley's girlfriend Abby.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/rachelle-tennis.jpg" alt="Rachelle on the tennis court">
+        <div class="family-cap">
+          <strong>Rachelle on the Court</strong>
+          <span>The same grit and grace she brings everywhere else in life.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/children-food-truck-rally.jpg" alt="Riley, Landon, and Willow at a food truck rally in Rogersville">
+        <div class="family-cap">
+          <strong>Rogersville Kids</strong>
+          <span>Riley, Landon, and Willow at a hometown food truck rally.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/riley-first-pickup.jpg" alt="Riley in the first pickup truck he bought from working part time with his dad">
+        <div class="family-cap">
+          <strong>Riley's First Truck</strong>
+          <span>Bought with part-time work beside his dad in the family business.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/goats-and-hens.jpg" alt="The goats and chickens the family kept on the property">
+        <div class="family-cap">
+          <strong>Homestead Crew</strong>
+          <span>Goats, hens, and the everyday life this land already knows.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/willow-and-solan.jpg" alt="Willow and her best friend Solan hanging out at the farm while doing chores">
+        <div class="family-cap">
+          <strong>Willow &amp; Solan</strong>
+          <span>Farm chores, muddy grass, and the kind of childhood you remember forever.</span>
+        </div>
+      </div>
+      <div class="family-shot reveal">
+        <img src="images/andrew-willow-christmas.jpg" alt="Andrew and Willow together at Christmas">
+        <div class="family-cap">
+          <strong>Andrew &amp; Willow</strong>
+          <span>Christmas joy, inside jokes, and the tenderness that fills this family.</span>
+        </div>
+      </div>
+    </div>
+    <div id="lori-memorial" class="lori-feature reveal">
+      <div class="lori-photo">
+        <img src="images/lori-willow.jpg" alt="Lori Osmun holding Willow as a baby">
+      </div>
+      <div class="lori-copy">
+        <span class="lbl">In Loving Memory</span>
+        <h3>Lori Osmun</h3>
+        <div class="lori-date">April 28, 1954 — February 3, 2021</div>
+        <p class="bp">Lori Osmun was Rachelle's mother, Willow's grandmother, and the woman whose love still lives quietly inside this story. Her final gift helped make the family's first home possible, which means this land has carried her with it from the very beginning.</p>
+        <p class="bp">She worked in medicine, loved beauty, travel, antiquing, and making things with her hands. She was sophisticated, warm, creative, and deeply adored by her children and grandchildren.</p>
+        <p class="lori-note">She helped make their first home possible, and in many ways she is still here — woven into the walls, the memories, and the life that continues.</p>
+        <div class="lori-actions">
+          <a href="lori-osmun.html" class="story-link">Read Lori's Memorial →</a>
+          <a href="lori-osmun.html#lori-media" class="story-link alt">See the Tribute Videos →</a>
         </div>
       </div>
     </div>
@@ -805,9 +904,27 @@ const ctrObs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.counter').forEach(el=>ctrObs.observe(el));
 
 // SUNFLOWER CURSOR TRAIL
-let trail=[];
-document.addEventListener('mousemove',e=>{
-  if(Math.random()>.7){
-    const sf=document.createElement('div');
-    sf.innerHTML='🌻';
-    sf.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;font-size:${Math.random()*14+8}px;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);animation:sfFade .8
+const finePointer=window.matchMedia('(pointer:fine)').matches;
+const sfStyle=document.createElement('style');
+sfStyle.textContent=`@keyframes sfFade{0%{opacity:1;transform:translate(-50%,-50%) scale(.72) rotate(0deg);}100%{opacity:0;transform:translate(calc(-50% + var(--drift,0px)),calc(-50% - 34px)) scale(1.45) rotate(20deg);}}`;
+document.head.appendChild(sfStyle);
+if(!finePointer){
+  cur.style.display='none';
+  curR.style.display='none';
+}else{
+  document.addEventListener('mousemove',e=>{
+    if(Math.random()>.52){
+      const sf=document.createElement('div');
+      sf.textContent='🌻';
+      const size=Math.random()*10+11;
+      const drift=(Math.random()-.5)*26;
+      sf.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;font-size:${size}px;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);animation:sfFade 1.05s ease-out forwards;filter:drop-shadow(0 0 10px rgba(232,185,15,.35));`;
+      sf.style.setProperty('--drift',`${drift}px`);
+      document.body.appendChild(sf);
+      setTimeout(()=>sf.remove(),1025);
+    }
+  });
+}
+</script>
+</body>
+</html>
